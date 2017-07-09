@@ -1,0 +1,29 @@
+error-dialog {
+
+    div.error-container{
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+        left: 0;
+    }
+
+    ion-icon.error-icon{
+        font-size: 22px;
+        margin: 0 !important;
+        margin-top: 40px !important;
+        margin-right: 30px !important;
+        color: #dd4a58;
+        float: right;
+    }
+
+    div.error-dialog{
+        position: absolute;
+        width: auto;
+        color: #dd4a58;
+        font-size: 11px;
+        font-style: italic;
+        top: 5px;
+        left: 15px;
+    }
+
+}

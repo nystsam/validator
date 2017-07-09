@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 text-center>List Detail</h2>
+  <h3 text-center><i>A FormGroup with multiple FormControls</i></h3>
+  <form [formGroup]="listForm.form" #myForm="ngForm" novalidate>
+    <ion-grid>
+      <ion-row class="row-with-dialog">
+        <ion-col col-11 ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" formControlName="name" [(ngModel)]="currentList.name" #name></ion-input>
+        </ion-col>
+        <!-- Dialog -->
+        <error-dialog
+          [inputSelector]="name"
+          [type]="1"
+          [messages]="messages">
+        </error-dialog>
+      </ion-row>
+      <ion-row class="row-with-dialog">
+        <ion-col col-11 ion-item>
+          <ion-label floating>Street</ion-label>
+          <ion-input type="text" formControlName="street" [(ngModel)]="currentList.street" #street></ion-input>
+          <ion-icon name="search" item-right *ngIf="!hideIcon"></ion-icon>
+        </ion-col>
+        <!-- Dialog -->
+        <error-dialog
+          [inputSelector]="street"
+          [type]="1"
+          [messages]="messages"
+          (isInvalid)="hideIcon = $event">
+        </error-dialog>
+      </ion-row>
+      <ion-row class="row-with-dialog">
+        <ion-col col-11 ion-item>
+          <ion-label floating>City</ion-label>
+          <ion-input type="text" formControlName="city" [(ngModel)]="currentList.city" #city></ion-input>
+        </ion-col>
+        <!-- Dialog -->
+        <error-dialog
+          [inputSelector]="city"
+          [type]="1"
+          [messages]="messages">
+        </error-dialog>
+      </ion-row>
+      <ion-row>
+        <ion-col col-11 ion-item>
+          <ion-label floating>Gender</ion-label>
+          <ion-select formControlName="gender">
+            <ion-option [value]="1">Female</ion-option>
+            <ion-option [value]="2">Male</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button type="submit" [disabled]="!listForm.form.valid" ion-button>Siguiente</button>
+  </form>
+  
+<p> List value: {{listForm.form.value | json }}</p>
+</ion-content>

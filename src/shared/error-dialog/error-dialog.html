@@ -1,0 +1,18 @@
+<div #input class="error-container" 
+*ngIf="type == 1 && inputSelector.ngControl.errors && (inputSelector.ngControl.dirty || inputSelector.ngControl.touched)">
+  <div class="error-dialog">
+    <div [hidden]="!inputSelector.ngControl.errors.required">
+      {{messages[0]}}
+    </div>
+    <div [hidden]="!inputSelector.ngControl.errors.minlength">
+      {{messages[1]}}
+    </div>
+    <div [hidden]="!inputSelector.ngControl.errors.maxlength">
+      {{messages[2]}}
+    </div>
+    <div [hidden]="!inputSelector.ngControl.errors.pattern">
+      {{messages[3]}}
+    </div>
+  </div>
+  <ion-icon class="error-icon" name="close" item-right></ion-icon>
+</div>
