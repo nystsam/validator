@@ -4,7 +4,7 @@ import { FormValidator } from "../../forms/FormValidator";
 
 export class FormFactory {
 
-    public static createListForm(_fb: FormBuilder): FormValidator{
+    public static createListForm(_fb: FormBuilder): FormValidator<string, string>{
         return new ListFormValidator(_fb);
     }
 

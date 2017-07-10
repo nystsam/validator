@@ -10,7 +10,7 @@ import { FormValidator } from "../../forms/FormValidator";
 })
 export class HomePage {
 
-    public listForm: FormValidator;
+    public listForm: FormValidator<string, string>;
 
     public currentList = {
         name: '',

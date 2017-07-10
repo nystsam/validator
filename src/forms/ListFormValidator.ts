@@ -1,7 +1,7 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormValidator } from "./FormValidator";
 
-export class ListFormValidator extends FormValidator{
+export class ListFormValidator extends FormValidator<string, string>{
 
     constructor(
         private fb: FormBuilder,

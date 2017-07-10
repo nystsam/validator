@@ -1,6 +1,6 @@
 import { FormGroup } from '@angular/forms';
 
-export abstract class FormValidator{
+export abstract class FormValidator<FirstParam, SecondParam>{
     
     /**
      * Form data used to generate the reactive form.
@@ -10,6 +10,14 @@ export abstract class FormValidator{
      * Messages dialogs for invalid fields.
      */
     protected messagesDialogs: string[] = [];
+    /**
+     * 
+     */
+    public firstParam: FirstParam;
+    /**
+     * 
+     */
+    public secondParam: SecondParam;
 
     constructor(
     ) {}
