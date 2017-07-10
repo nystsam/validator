@@ -4,9 +4,13 @@ import { FormValidator } from "./FormValidator";
 export class ListFormValidator extends FormValidator{
 
     constructor(
-        protected fb: FormBuilder,
+        private fb: FormBuilder,
     ) {
         super();
+        this.messages.push('Field is required');
+        this.messages.push('Field must be at least 2 characters long.');
+        this.messages.push('Field cannot be more than 10 characters long.');
+        this.messages.push('Only alpha-numeric values.');
     }
 
     public createForm(): void{

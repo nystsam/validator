@@ -20,7 +20,7 @@
         <error-dialog
           [inputSelector]="name"
           [type]="1"
-          [messages]="messages">
+          [messages]="listForm.messages">
         </error-dialog>
       </ion-row>
       <ion-row class="row-with-dialog">
@@ -33,7 +33,7 @@
         <error-dialog
           [inputSelector]="street"
           [type]="1"
-          [messages]="messages"
+          [messages]="listForm.messages"
           (isInvalid)="hideIcon = $event">
         </error-dialog>
       </ion-row>
@@ -46,7 +46,7 @@
         <error-dialog
           [inputSelector]="city"
           [type]="1"
-          [messages]="messages">
+          [messages]="listForm.messages">
         </error-dialog>
       </ion-row>
       <ion-row>
