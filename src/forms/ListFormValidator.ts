@@ -7,10 +7,10 @@ export class ListFormValidator extends FormValidator<string, string>{
         private fb: FormBuilder,
     ) {
         super();
-        this.messages.push('Field is required');
-        this.messages.push('Field must be at least 2 characters long.');
-        this.messages.push('Field cannot be more than 10 characters long.');
-        this.messages.push('Only alpha-numeric values.');
+        this.messagesDialogs.push('Field is required');
+        this.messagesDialogs.push('Field must be at least 2 characters long.');
+        this.messagesDialogs.push('Field cannot be more than 10 characters long.');
+        this.messagesDialogs.push('Only alpha-numeric values.');
     }
 
     public createForm(): void{
